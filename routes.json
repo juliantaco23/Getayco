@@ -1,0 +1,332 @@
+{
+  "admin": [
+    {
+      "path": "/api/admin/register",
+      "method": "POST",
+      "params": {
+        "body": {
+          "username": "string",
+          "password": "string"
+        }
+      },
+      "description": "Registrar un nuevo administrador"
+    },
+    {
+      "path": "/api/admin/login",
+      "method": "POST",
+      "params": {
+        "body": {
+          "username": "string",
+          "password": "string"
+        }
+      },
+      "description": "Iniciar sesión de un administrador"
+    }
+  ],
+  "file": [
+    {
+      "path": "/api/file/upload",
+      "method": "POST",
+      "params": {
+        "headers": {
+          "Authorization": "Bearer token"
+        },
+        "body": {
+          "file": "file",
+          "session_id": "string",
+          "type": "string (photo or audio)"
+        }
+      },
+      "description": "Subir un archivo asociado a una sesión"
+    },
+    {
+      "path": "/api/file/session/:session_id",
+      "method": "GET",
+      "params": {
+        "headers": {
+          "Authorization": "Bearer token"
+        },
+        "path": {
+          "session_id": "string"
+        }
+      },
+      "description": "Obtener archivos de una sesión específica"
+    }
+  ],
+  "project": [
+    {
+      "path": "/api/project/create",
+      "method": "POST",
+      "params": {
+        "headers": {
+          "Authorization": "Bearer token"
+        },
+        "body": {
+          "name": "string"
+        }
+      },
+      "description": "Crear un nuevo proyecto"
+    },
+    {
+      "path": "/api/project/admin",
+      "method": "GET",
+      "params": {
+        "headers": {
+          "Authorization": "Bearer token"
+        }
+      },
+      "description": "Obtener todos los proyectos de un administrador"
+    },
+    {
+      "path": "/api/project/:id",
+      "method": "GET",
+      "params": {
+        "headers": {
+          "Authorization": "Bearer token"
+        },
+        "path": {
+          "id": "string"
+        }
+      },
+      "description": "Obtener un proyecto por ID"
+    },
+    {
+      "path": "/api/project/:id",
+      "method": "PUT",
+      "params": {
+        "headers": {
+          "Authorization": "Bearer token"
+        },
+        "body": {
+          "name": "string"
+        },
+        "path": {
+          "id": "string"
+        }
+      },
+      "description": "Actualizar un proyecto por ID"
+    },
+    {
+      "path": "/api/project/:id",
+      "method": "DELETE",
+      "params": {
+        "headers": {
+          "Authorization": "Bearer token"
+        },
+        "path": {
+          "id": "string"
+        }
+      },
+      "description": "Eliminar un proyecto por ID"
+    },
+    {
+      "path": "/api/project/:id/workers",
+      "method": "GET",
+      "params": {
+        "headers": {
+          "Authorization": "Bearer token"
+        },
+        "path": {
+          "id": "string"
+        }
+      },
+      "description": "Obtener todos los trabajadores de un proyecto"
+    },
+    {
+      "path": "/api/project/:id/sessions",
+      "method": "GET",
+      "params": {
+        "headers": {
+          "Authorization": "Bearer token"
+        },
+        "path": {
+          "id": "string"
+        }
+      },
+      "description": "Obtener todas las sesiones de un proyecto"
+    }
+  ],
+  "service": [
+    {
+      "path": "/api/service/create",
+      "method": "POST",
+      "params": {
+        "headers": {
+          "Authorization": "Bearer token"
+        },
+        "body": {
+          "name": "string"
+        }
+      },
+      "description": "Crear un nuevo servicio"
+    },
+    {
+      "path": "/api/service",
+      "method": "GET",
+      "params": {
+        "headers": {
+          "Authorization": "Bearer token"
+        }
+      },
+      "description": "Obtener todos los servicios"
+    },
+    {
+      "path": "/api/service/:id",
+      "method": "GET",
+      "params": {
+        "headers": {
+          "Authorization": "Bearer token"
+        },
+        "path": {
+          "id": "string"
+        }
+      },
+      "description": "Obtener un servicio por ID"
+    },
+    {
+      "path": "/api/service/:id",
+      "method": "PUT",
+      "params": {
+        "headers": {
+          "Authorization": "Bearer token"
+        },
+        "body": {
+          "name": "string"
+        },
+        "path": {
+          "id": "string"
+        }
+      },
+      "description": "Actualizar un servicio por ID"
+    },
+    {
+      "path": "/api/service/:id",
+      "method": "DELETE",
+      "params": {
+        "headers": {
+          "Authorization": "Bearer token"
+        },
+        "path": {
+          "id": "string"
+        }
+      },
+      "description": "Eliminar un servicio por ID"
+    }
+  ],
+  "session": [
+    {
+      "path": "/api/session/create",
+      "method": "POST",
+      "params": {
+        "headers": {
+          "Authorization": "Bearer token"
+        },
+        "body": {
+          "project_id": "string",
+          "name": "string"
+        }
+      },
+      "description": "Crear una nueva sesión"
+    },
+    {
+      "path": "/api/session/:id",
+      "method": "GET",
+      "params": {
+        "headers": {
+          "Authorization": "Bearer token"
+        },
+        "path": {
+          "id": "string"
+        }
+      },
+      "description": "Obtener una sesión por ID"
+    },
+    {
+      "path": "/api/session/:id",
+      "method": "PUT",
+      "params": {
+        "headers": {
+          "Authorization": "Bearer token"
+        },
+        "body": {
+          "name": "string"
+        },
+        "path": {
+          "id": "string"
+        }
+      },
+      "description": "Actualizar una sesión por ID"
+    },
+    {
+      "path": "/api/session/:id",
+      "method": "DELETE",
+      "params": {
+        "headers": {
+          "Authorization": "Bearer token"
+        },
+        "path": {
+          "id": "string"
+        }
+      },
+      "description": "Eliminar una sesión por ID"
+    }
+  ],
+  "worker": [
+    {
+      "path": "/api/worker/create",
+      "method": "POST",
+      "params": {
+        "headers": {
+          "Authorization": "Bearer token"
+        },
+        "body": {
+          "name": "string",
+          "project_id": "string"
+        }
+      },
+      "description": "Crear un nuevo trabajador"
+    },
+    {
+      "path": "/api/worker/:id",
+      "method": "GET",
+      "params": {
+        "headers": {
+          "Authorization": "Bearer token"
+        },
+        "path": {
+          "id": "string"
+        }
+      },
+      "description": "Obtener un trabajador por ID"
+    },
+    {
+      "path": "/api/worker/:id",
+      "method": "PUT",
+      "params": {
+        "headers": {
+          "Authorization": "Bearer token"
+        },
+        "body": {
+          "name": "string"
+        },
+        "path": {
+          "id": "string"
+        }
+      },
+      "description": "Actualizar un trabajador por ID"
+    },
+    {
+      "path": "/api/worker/:id",
+      "method": "DELETE",
+      "params": {
+        "headers": {
+          "Authorization": "Bearer token"
+        },
+        "path": {
+          "id": "string"
+        }
+      },
+      "description": "Eliminar un trabajador por ID"
+    }
+  ]
+}
